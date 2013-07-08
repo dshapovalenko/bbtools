@@ -126,6 +126,8 @@ class Servo:
 				self.__targetDuty = targetDuty
 				self.__timer = Timer(delay, self.__doAsyncStep, [step])
 				self.__timer.start()
+			else:
+				self.__destroyTimer()
 		finally:
 			self.__lock.release()
 	
